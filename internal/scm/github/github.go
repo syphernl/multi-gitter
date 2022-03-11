@@ -128,12 +128,12 @@ func (g *Github) GetRepositories(ctx context.Context) ([]scm.Repository, error) 
 		// Check if it's even meaningful to run on this repository or if it will just error
 		// when trying to do other actions
 		switch {
-		case r.GetArchived():
-			log.Debug("Skipping repository since it's archived")
-			continue
-		case r.GetDisabled():
-			log.Debug("Skipping repository since it's disabled")
-			continue
+		// case r.GetArchived():
+		// 	log.Debug("Skipping repository since it's archived")
+		// 	continue
+		// case r.GetDisabled():
+		// 	log.Debug("Skipping repository since it's disabled")
+		// 	continue
 		case !permissions["pull"]:
 			log.Debug("Skipping repository since the token does not have pull permissions")
 			continue
